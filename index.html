@@ -14,7 +14,6 @@
     <script>
         $(function () {
 
-            //pc 2차메뉴 드롭다운
             let pcDepth01 = $('.pc .depth01')
             let pcDepth02 = $('.pc .depth02')
 
@@ -25,27 +24,20 @@
                 pcDepth02.stop().slideUp()
             })
 
-            //모바일메뉴
             let mobileBtn = $('.mobile_menu')
             let mobileNav = $('.mobile_gnb')
 
-            //mobileNav의 left값 확인
             console.log(mobileNav.offset().left)
-            //화면창 너비값
             console.log($(window).width())
 
             mobileBtn.click(function () {
                 if (mobileNav.offset().left == -$(window).width()) {
-                    //조건이 맞으면 실행
-                    // alert('조건맞음')
                     $(this).addClass('on')
-
                     mobileNav.animate({
                         'left': '0'
                     })
 
                 } else {
-                    // alert('조건 맞지 않음')
                     $(this).removeClass('on')
                     mobileNav.animate({
                         'left': -$(window).width()
